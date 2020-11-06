@@ -1,7 +1,13 @@
+import store from "./store";
+
 const url = "https://thinkful-list-api.herokuapp.com/talon/bookmarks";
 
 function getallBookmarks() {
-  return fetch(url).then((res) => res.json());
+  return fetch(url)
+    .then((res) => res.json())
+    .catch((err) => {
+      store.error = err;
+    });
 }
 
 function addBookmark(bookmark) {
@@ -11,12 +17,18 @@ function addBookmark(bookmark) {
     },
     method: "POST",
     body: JSON.stringify(bookmark),
-  }).then((res) => res.json());
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      store.error = err;
+    });
 }
 
 function deleteBookmark(id) {
   return fetch(url + "/" + id, {
     method: "DELETE",
+  }).catch((err) => {
+    store.error = err;
   });
 }
 

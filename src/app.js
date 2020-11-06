@@ -1,6 +1,8 @@
 import api from "./api";
 import functions from "./functions";
+import store from "./store";
 
 api.getallBookmarks().then((res) => {
-  functions.showbookmarks(res, 0);
+  store.updateBookmark(res);
+  functions.render();
 });
