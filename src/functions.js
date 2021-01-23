@@ -6,32 +6,32 @@ import templates from "./templates";
 
 function removeBookmark(id) {
   api.deleteBookmark(id).then((res) => {
-    api.getallBookmarks().then((res) => {
+    api.getAllBookmarks().then((res) => {
       store.updateBookmark(res);
       render();
     });
   });
 }
 
-function addevents() {
+function addEvents() {
   $("main").unbind();
   if (store.adding) {
     $("#cancel").on("click", function () {
-      store.stopadding();
+      store.stopPadding();
       render();
     });
-    $("#addbookmark").on("submit", function (evt) {
+    $("#addBookmark").on("submit", function (evt) {
       evt.preventDefault();
       addBookMarkToApi();
     });
   } else if (store.error != null) {
     $("#back").on("click", function () {
-      store.stopadding();
+      store.stopPadding();
       render();
     });
   } else {
-    $("#addform").on("click", function () {
-      store.addform();
+    $("#addForm").on("click", function () {
+      store.addForm();
       render();
     });
     $("#filter").on("change", function (event) {
@@ -54,8 +54,8 @@ function addBookMarkToApi() {
   };
 
   api.addBookmark(send).then((data) => {
-    store.stopadding();
-    api.getallBookmarks().then((res) => {
+    store.stopPadding();
+    api.getAllBookmarks().then((res) => {
       store.updateBookmark(res);
       render();
     });
@@ -66,7 +66,7 @@ function render() {
   $("main").html("<h1>My Bookmarks</h1>");
   switch (store.status()) {
     case "Adding":
-      $("main").append(templates.addbookmarkform());
+      $("main").append(templates.addBookmarkForm());
       break;
     case "Error":
       $("main").append(templates.error());
@@ -75,7 +75,7 @@ function render() {
       $("main").append(templates.ShowBookmarks());
       break;
   }
-  addevents();
+  addEvents();
 }
 
 export default {

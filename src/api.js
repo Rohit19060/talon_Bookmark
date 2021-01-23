@@ -1,8 +1,8 @@
 import store from "./store";
 
-const url = "https://thinkful-list-api.herokuapp.com/talon/bookmarks";
+const url = "https://thinkful-list-api.herokuapp.com/rohit/bookmarks";
 
-function getallBookmarks() {
+function getAllBookmarks() {
   return fetch(url)
     .then((res) => res.json())
     .catch((err) => {
@@ -32,4 +32,4 @@ function deleteBookmark(id) {
   });
 }
 
-export default { getallBookmarks, addBookmark, deleteBookmark };
+export default { getAllBookmarks, addBookmark, deleteBookmark };

@@ -48,7 +48,7 @@ select {
     background-color: rgb(245, 245, 245);
 }
 
-.mainview {
+.mainView {
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -66,13 +66,13 @@ select {
     margin-top: 20px;
 }
 
-.hiddenview {
+.hiddenView {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-#addbookmark {
+#addBookmark {
     padding: 30px;
     border-radius: 15px;
     box-shadow: -1px -1px 12px 5px rgba(232, 232, 232, 1);
@@ -83,7 +83,7 @@ input {
     min-width: 50%;
 }
 
-.inputdiv {
+.inputDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;

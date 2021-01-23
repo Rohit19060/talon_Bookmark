@@ -20,19 +20,19 @@ function updateBookmark(bookmarks) {
   });
 }
 
-function addform() {
+function addForm() {
   this.adding = true;
 }
 
-function stopadding() {
+function stopPadding() {
   this.adding = false;
 }
 
 export default {
   status,
-  stopadding,
+  stopPadding,
   updateBookmark,
   bookmarks,
-  addform,
+  addForm,
   filter,
 };
