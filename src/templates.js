@@ -12,11 +12,11 @@ function addBookmarkForm() {
       <input type="text" name="title" id="title" required>
       </div>
       <div class="inputDiv">
-      <label for="title">Url: </label>
+      <label for="url">Url: </label>
       <input type="url" name="url" id="url" required>
       </div>
       <div class="inputDiv">
-      <label for="title">Description: </label>
+      <label for="desc">Description: </label>
       <input type="text" name="desc" id="desc" required>
       </div>
       <br>
